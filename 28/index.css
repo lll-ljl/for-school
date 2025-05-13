@@ -1,0 +1,167 @@
+/* 基础样式 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Mulliner展示区 */
+.mulliner-hero {
+  height: 100vh;
+  position: relative;
+  background: #0a0a0a;
+  overflow: hidden;
+}
+
+.hero-background {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: url('image/Mulliner\ Article\ Teaser\ 4.jpg');
+  background-size: cover;
+  background-position: 70% center;
+  opacity: 0.9;
+}
+
+.content-wrapper {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 8%;
+  color: white;
+}
+
+.text-content {
+  max-width: 600px;
+  z-index: 2;
+}
+
+.sup-title {
+  font-size: 0.6rem;
+  letter-spacing: 3px;
+  margin-bottom: 18px;
+  opacity: 0.8;
+}
+
+.main-title {
+  font-size: 3.1rem;
+  font-weight: 300;
+  line-height: 1.1;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+}
+
+.description {
+  font-size: 0.9rem;
+  line-height: 1.8;
+  margin-bottom: 40px;
+  max-width: 500px;
+  opacity: 0.9;
+}
+
+.explore-btn {
+  background: rgba(39, 78, 39, 0.616);
+  color: white;
+  border: 1px solid rgba(40, 85, 19, 0.3);
+  padding: 15px 40px;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* 配置器区块 */
+.configurator-section {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('image/Configure\ your\ perfect\ car\ Main.jpg') center/cover;
+  position: relative;
+}
+
+.config-content {
+  max-width: 800px;
+  padding: 40px;
+  background: rgba(0,0,0,0.7);
+  color: white;
+  text-align: center;
+  z-index: 1;
+}
+
+.config-title {
+  font-size: 2.8rem;
+  margin-bottom: 25px;
+  font-weight: 300;
+}
+
+.config-description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 35px;
+  opacity: 0.9;
+}
+
+.config-btn {
+  background: transparent;
+  color: white;
+  border: 1px solid rgba(255,255,255,0.3);
+  padding: 15px 50px;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* 通用悬停效果 */
+.explore-btn:hover,
+.config-btn:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: white;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .content-wrapper {
+      padding: 0 5%;
+  }
+
+  .main-title {
+      font-size: 2.5rem;
+  }
+
+  .config-title {
+      font-size: 2rem;
+  }
+
+  .description,
+  .config-description {
+      font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-title {
+      font-size: 2rem;
+  }
+  
+  .sup-title {
+      font-size: 1rem;
+  }
+
+  .config-content {
+      padding: 20px;
+  }
+}
+.text-content img {
+  max-width: 100%; /* 确保图片宽度不超过容器 */
+  height: auto; /* 保持图片的纵横比 */
+  margin-top: 20px; /* 给图片和上方内容添加一些间距 */
+}
+.mulliner-hero .text-content {
+  background-color: #f5f5f562;
+  padding: 40px; /* 可选：增加内边距 */
+  display: inline-block; /* 可选：让背景仅包裹内容宽度 */
+}
