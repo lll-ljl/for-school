@@ -1,0 +1,504 @@
+/* 基础样式 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Mulliner展示区 */
+.mulliner-hero {
+  margin:40px;
+  height: 100vh;
+  position: relative;
+  background: #0a0a0a;
+  overflow: hidden;
+}
+
+.hero-background {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: 70% center;
+  opacity: 0.9;
+}
+
+.content-wrapper {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 8%;
+  color: white;
+}
+
+.text-content {
+  max-width: 600px;
+  z-index: 2;
+  backdrop-filter: blur(10px); 
+}
+
+.sup-title {
+  font-size: 0.6rem;
+  letter-spacing: 3px;
+  margin-bottom: 18px;
+  opacity: 0.8;
+}
+
+.main-title {
+  font-size: 3.1rem;
+  font-weight: 300;
+  line-height: 1.1;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+}
+
+.description {
+  font-size: 0.9rem;
+  line-height: 1.8;
+  margin-bottom: 40px;
+  max-width: 500px;
+  opacity: 0.9;
+}
+
+.explore-btn {
+  background-color: #394d45;
+  color: white;
+  border: 1px solid rgba(40, 85, 19, 0.3);
+  padding: 15px 40px;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* 配置器区块 */
+.configurator-section {
+  margin:40px;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.config-content {
+  max-width: 800px;
+  padding: 40px;
+  background: rgba(241, 236, 236, 0.137);
+  color: white;
+  text-align: center;
+  z-index: 1;
+}
+
+.config-title {
+  font-size: 2.6rem;
+  margin-bottom: 25px;
+  font-weight: 300;
+}
+
+.config-description {
+  font-size: 1.0rem;
+  line-height: 1.8;
+  margin-bottom: 35px;
+  opacity: 0.9;
+}
+
+.config-btn {
+  background-color: #394d45;
+  color: white;
+  border: 1px solid rgba(40,85,19,0.3);
+  padding: 15px 50px;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-color: rgba(255, 255, 255, 0.342); 
+}
+
+/* 通用悬停效果 */
+.explore-btn:hover,
+.config-btn:hover {
+  background-color: #394d30;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .content-wrapper {
+      padding: 0 5%;
+  }
+
+  .main-title {
+      font-size: 2.5rem;
+  }
+
+  .config-title {
+      font-size: 2rem;
+  }
+
+  .description,
+  .config-description {
+      font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-title {
+      font-size: 2rem;
+  }
+  
+  .sup-title {
+      font-size: 1rem;
+  }
+
+  .config-content {
+      padding: 20px;
+  }
+}
+.text-content img {
+  max-width: 100%; /* 确保图片宽度不超过容器 */
+  height: auto; /* 保持图片的纵横比 */
+  margin-top: 20px; /* 给图片和上方内容添加一些间距 */
+}
+.mulliner-hero .text-content {
+  background: rgba(255, 255, 255, 0.062);
+  /* 修改边框颜色，降低透明度 */
+  border-color: rgba(255, 255, 255, 0.116); 
+  padding: 40px; /* 可选：增加内边距 */
+  display: inline-block; /* 可选：让背景仅包裹内容宽度 */
+  position: relative; /* 开启相对定位 */
+  padding-right: 60px；
+}
+.mulliner-hero .text-content .gray-square {
+  position: absolute; /* 子元素使用绝对定位，相对于 .text-content */
+  top: -40px;
+  right: -30px;
+  width: 260px; /* 正方形宽度 */
+  height: 260px; /* 正方形高度 */
+  background-color: #cccccc3a; 
+  /* 添加虚化效果 */
+  backdrop-filter: blur(10px); 
+}
+.configurator-section .config-content {
+  background: rgba(255, 255, 255, 0.062);
+  border-color: rgba(255, 255, 255, 0.103); 
+  padding: 40px; 
+  display: inline-block; 
+  position: relative; 
+  padding-right: 60px;
+  backdrop-filter: blur(10px); 
+}
+
+.configurator-section .config-content .gray-square{
+  position: absolute;
+  top: -60px; /* 将正方形固定到 .config-content 的顶部 */
+  left: 230px; /* 将正方形固定到 .config-content 的左侧 */
+  width: 350px; 
+  height: 260px; 
+  background-color: #cccccc3a; 
+}
+.gray-square {
+  position: fixed; /* 固定定位，相对于视口 */;
+  width: 540px;
+  height: 480px;
+  background: rgba(255, 255, 255, 0.1); /* 半透明白色层 */
+  backdrop-filter: blur(10px); /* 关键模糊效果 */
+  z-index: -1; /* 确保文字在框上方 */
+}
+.mulliner-hero .text-content {
+  position: relative;
+  padding: 40px;
+}
+.mulliner-hero .hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  filter: brightness(0.7); /* 背景图片暗化 */
+}
+.configurator-section {
+  position: relative;
+}
+
+/* Mulliner展示区 */
+.mulliner-hero {
+  height: 100vh;
+  position: relative;
+  background: #0a0a0a;
+  overflow: hidden;
+}
+
+.hero-background-image {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: 70% center;
+  opacity: 0.9;
+  filter: brightness(0.7);
+}
+
+/* 配置器区块 */
+.configurator-section {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: none;
+}
+
+.config-background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: -1;
+}
+
+
+/* 文档图标基础样式 */
+.document-icon {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  position: relative;
+  left: -160px; 
+}
+
+/* 文档外框（使用伪元素实现） */
+.document-icon::before {
+  content: "";
+  position: absolute;
+  top: -5;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 1.5px solid currentColor;
+  border-radius: 1px;
+  box-sizing: border-box;
+}
+
+/* 文档内容线通用样式 */
+.document-icon .line {
+  position: absolute;
+  left: calc(3.5px - 165px);
+  left: 3.5px;
+  height: 1.5px;
+  background-color: currentColor;
+}
+
+/* 第一条线 */
+.document-icon .line-1 {
+  top: 4.25px;
+  right: 3.5px;
+}
+
+/* 第二条线 */
+.document-icon .line-2 {
+  top: 7.25px;
+  right: 3.5px;
+}
+
+/* 第三条线（更短） */
+.document-icon .line-3 {
+  top: 10.25px;
+  right: 6.5px;
+}
+
+
+/* 图标容器 */
+.bar-chart-icon {
+  width: 16px;
+  height: 16px;
+  display: flex;
+  gap: 2px; /* 柱子间距 */
+  align-items: flex-end; /* 柱子从底部对齐 */
+  transform: translate(230px, -35px);
+}
+
+/* 柱子组 */
+.bar-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+/* 柱子基础样式 */
+.bar {
+  background-color: currentColor; /* 继承文字颜色 */
+  border-radius: 1px; /* 圆角模拟 stroke-linecap="round" */
+}
+
+/* 各柱子高度 */
+.bar-1 { width: 2px; height: 5px; } /* 左1 */
+.bar-2 { width: 4px; height: 4px; }  /* 左2 */
+.bar-3 { width: 2px; height: 6px; }  /* 左3 */
+
+.bar-4 { width: 2px; height: 8px; }  /* 中1 */
+.bar-5 { width: 2px; height: 3px; }  /* 中2 */
+
+.bar-6 { width: 2px; height: 12px; } /* 右1 */
+
+
+.Ownership-section{
+  margin:40px;
+  height: 100vh;
+}
+
+/* Main teaser content container */
+.Ownership-section > div {
+  position: relative;
+}
+
+.Ownership-section img {
+  display: block;
+  width: 100%;
+}
+
+.bm-m-article-teaser__content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: white;
+  transform: translate(1250px, 300px); 
+}
+
+/* "Explore" header */
+.bm-m-article-teaser__header {
+  margin: 0 0 8px 0;
+  font-size: 10px;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color:white;
+}
+
+/* "Ownership" headline */
+.bm-m-article-teaser__headline {
+  margin: 0 0 12px 0;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1.2;
+  color:white;
+}
+
+/* Content text */
+.bm-m-article-teaser__content-text {
+  margin: 0 0 20px 0;
+  font-size: 20px;
+  line-height: 1.4;
+  color:white;
+}
+
+/* Button group container */
+.bm-e-button-group {
+  display: flex;
+  margin-top: 16px;
+}
+
+/* Base button styles */
+.bm-e-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.4;
+  transition: all 0.2s ease;
+}
+.bm-m-article-teaser__content-text {
+  white-space: pre-wrap;
+}
+.bm-e-button__label{
+  background-color: #394d45;
+  color: white;
+  border: 1px solid rgba(40,85,19,0.3);
+  padding: 15px 50px;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-color: rgba(255, 255, 255, 0.342); 
+  right: 200px;
+}
+
+
+.bm-m-article-teaser__content {
+  background: rgba(255, 255, 255, 0.041); /* 半透明白色层 */
+  padding: 82px; 
+  backdrop-filter: blur(10px); 
+  margin-left: -300px;
+  margin-top: -50px;
+}
+
+
+.graerw{
+  position: absolute; /* 子元素使用绝对定位，相对于 .text-content */
+  top: -50px; /* 原 -40px，减小 10px 以向上移动 */
+  right: 400px;
+  width: 260px; /* 正方形宽度 */
+  height: 260px; /* 正方形高度 */
+  background-color: #cccccc57;
+  font-weight: bold;
+}
+
+.container {
+  position: relative;
+  width: 15px;
+  height: 15px;
+  top: -10px; /* 新增 top 属性，整体上移 */
+  font-weight: bold;
+
+}
+
+.box {
+  width: 18px;
+  height: 24px;
+  border: 0.5px solid currentColor;
+  position: absolute;
+  top: -14px; /* 原 -10px，减小 10px 以向上移动 */
+  left: 3px;
+  border-radius: 0.5px;
+  font-weight: bold;
+
+}
+
+.line {
+  position: absolute;
+  height: 0.5px;
+  background: currentColor;
+  left: 4.5px;
+  border-radius: 0.25px;
+  font-weight: bold;
+
+}
+
+.line1 {
+  top: -6px; /* 原 -2.5px，减小 10px 以向上移动 */
+  width: 12px;
+  font-weight: bold;
+
+}
+
+.line2 {
+  top: -1px; /* 原 0.5px，减小 10px 以向上移动 */
+  width: 12px;
+  font-weight: bold;
+
+}
+
+.line3 {
+  top: 3.5px; /* 原 6.5px，减小 10px 以向上移动 */
+  width: 7.5px;
+  font-weight: bold;
+
+}
